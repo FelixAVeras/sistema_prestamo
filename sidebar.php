@@ -1,6 +1,6 @@
-<!-- <div class="contenedor-menu">
+<div class="contenedor-menu">
     <!-- <a href="#" class="btn btn-menu">Menú <i class="fa fa-bars"></i></a> -->
-    <!--<ul class="menu">
+    <ul class="menu">
         <li><a href="#"><i class="fa fa-tachometer"></i> Panel </a></li>
         <li><a href="#"><i class="fa fa-users"></i> Clientes <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul>
@@ -28,12 +28,12 @@
         </li>
         <li><a href="#"><i class="fa fa-sign-out"></i> Salir </a></li>
     </ul>
-</div> -->
+</div>
 
-<div class="list-group">
+<!-- <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-users"></i> Clientes</a>
   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-sync"></i> Transacciones</a>
   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-circle"></i> Empleados</a>
   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-power-off"></i> Salir</a>
-</div>
+</div> -->
