@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     //menu desplegable lateral
     $('.menu li:has(ul)').click(function(e){
         e.preventDefault();
@@ -32,4 +33,11 @@ $(document).ready(function(){
     $('.menu li ul li a').click(function(){
         window.location.href = $(this).attr("href");
     });
+
+    
+
+
+
+
+
 });

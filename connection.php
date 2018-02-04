@@ -1,15 +1,9 @@
 <?php
 
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'sistema_prestamo';
+$connection = new mysqli('localhost', 'root', '', 'sistema_prestamo');
 
-try {
-    $connection = new PDO("mysql:host=$server;dbname=$database;",$username, $password);
-}
-catch(PDOException $error) {
-    die('Connection failed: '.$error->getMessage);
+if($connection->connect_errno) {
+	echo "Error al conectarse: ".$connection->connecterror;
 }
 
 ?>
