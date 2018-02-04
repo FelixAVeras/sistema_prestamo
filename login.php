@@ -1,28 +1,6 @@
 <?php
-    session_start();
+require 'connection.php';
 
-    if (isset($_SESSION['user_id'])) {
-        header('Location: /sistema_prestamo/login.php');
-    }
-
-    require 'connection.php';
-    
-    if(!empty($_POST['email']) && !empty($_POST['password'])) {
-        $records = $connection->prepare('SELECT id, email, password FROM users WHERE email = :email');
-        $records->bindParam(':email', $_POST['email']);
-        $records->execute();
-        $results = $records->fetch(PDO::FETCH_ASSOC);
-
-        $message = '';
-
-        if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-            $_SESSION['user_id'] = $result['id'];
-            header('Location: /sistema_prestamo/index.php');
-        }
-        else {
-            $message = 'Estos datos no se encuentran en nuestra base de datos.';
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +49,8 @@
     </div>
     <!-- Scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
 </body>

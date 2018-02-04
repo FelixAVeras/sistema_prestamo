@@ -60,7 +60,7 @@ function emailRegister($name, $email, $pass_has, $activo, $tipo_usuario) {
 	global $connection;
 
 	$stmt = $connection->prepare("INSERT INTO users (name, email, pass) VALUES(?,?,?)");
-	$stmt->bind_param("sss", $name, $email, $pass1);
+	$stmt->bind_param("sss", $name, $email, $pass_has, $activo, $tipo_usuario);
 
 	if($stmt->execute()) {
 		return $connection->insert_id;
