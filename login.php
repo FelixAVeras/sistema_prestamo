@@ -1,5 +1,17 @@
 <?php
-require 'connection.php';
+    require 'connection.php';
+    require 'functions/functions.php';
+
+    $errors = array();
+
+    if(!empty($_POST)) {
+        $email = $connection->real_escape_string($_POST['email']);
+        $password = $connection->real_escape_string($_POST['password']);
+
+        if (isNullLogin($email, $password)) {
+            $errors[] = "No puede haber campos vacios";
+        }
+    }
 
 ?>
 
