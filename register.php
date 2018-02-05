@@ -52,6 +52,7 @@
 
             if ($ejecutar) {
                 echo "Insertado correctamnte";
+                header('location: index.php');
             }
         }
 
