@@ -1,32 +1,32 @@
 <div class="contenedor-menu">
-    <!-- <a href="#" class="btn btn-menu">Menú <i class="fa fa-bars"></i></a> -->
+    <a href="#" class="btn btn-menu">Sistema Prestamos <i class="fa fa-bars"></i></a>
     <ul class="menu">
-        <li><a href="#"><i class="fa fa-tachometer"></i> Panel </a></li>
+        <li><a href="#"><i class="fa fa-tachometer-alt"></i> Panel </a></li>
         <li><a href="#"><i class="fa fa-users"></i> Clientes <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Crear Cliente</a></li>
+                <li><a href="#">Editar Cliente</a></li>
+                <li><a href="#">Eliminar Cliente</a></li>
+                <li><a href="#">Garante</a></li>
             </ul>
         </li>
-        <li><a href="#">Transacciones <i class="icono derecha fa fa-chevron-down"></i></a>
+        <li><a href="#"><i class="fa fa-sync"></i> Transacciones <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Nuevo Prestamo</a></li>
+                <li><a href="#">Historial de prestamos y pagos</a></li>
+                <li><a href="#">Pagos</a></li>
+                <li><a href="#">Moras y Atrazos</a></li>
             </ul>
         </li>
         <li><a href="#"><i class="fa fa-user-circle"></i> Empleados <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Nuevo Empleado</a></li>
+                <li><a href="#">Editar Empleado</a></li>
+                <li><a href="#">Gestionar Permisos</a></li>
+                <li><a href="#">Eliminar Empleado</a></li>
             </ul>
         </li>
-        <li><a href="#"><i class="fa fa-sign-out"></i> Salir </a></li>
+        <li><a href="#"><i class="fa fa-sign-out-alt"></i> Salir </a></li>
     </ul>
 </div>
 

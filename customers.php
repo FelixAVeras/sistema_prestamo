@@ -2,10 +2,10 @@
 <?php include('header.php'); ?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 col-12">
+    <div class="col-md-2 col-12">
       <?php include('sidebar.php'); ?>
     </div>
-    <div class="col-md-9 col-12">
+    <div class="col-md-10 col-12">
       <h2>Clientes</h2>
       <div class="btn-group  float-right">
         <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success">Nuevo Cliente</button>
@@ -41,7 +41,7 @@
         }
       ?>
       
-      <table class="table table-hover table-striped table-responsive">
+      <table class="table table-hover table-striped table-responsive table-customer">
         <thead class="thead-dark">
           <th>Nombre</th>
           <th>Cedula</th>
@@ -65,7 +65,7 @@
             $direccion = $row['address'];
             $email = $row['email'];
             $i++;
-          }
+          
         ?>
         <tbody>
           <td><?php echo $id; ?></td>
@@ -88,11 +88,11 @@
           <td><a href="customers.php?editar=<?php echo $id;?>" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a></td>
           <td><a href="customers.php?eliminar=<?php echo $id;?>" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a></td>
         </tbody>
+        <?php } ?>
       </table>
 
     </div>
   </div>
-
 
   <!-- Modal -->
     <div class="modal fade" id="newCustomer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
