@@ -1,6 +1,5 @@
 <?php
     require 'connection.php';
-    require 'functions/functions.php';
 
     $errors = array();
 
@@ -18,52 +17,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sistema de Prestamos | Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="css/login2.css">
+<link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-12 offset-3">
-                <h2 class="text-center">Sistema de Prestamos</h2>
-                <h4 class="text-center">Inicio de Sesión</h4>
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php if(!empty($message)): ?>
-                            <h3 class="text-center"><?= $message ?></h3>
-                        <?php endif; ?>
+	<header>
+		
+<div class="container">
+  	<h1 class="animated flip">IF Credit</h1>
+ </div>
+
+	</header>
+
+<section>
+	<div class="form">
+	    <div class="container formulario" >
+		    <fieldset>
+			    <legend>
+				    <h2>Login</h2>
+			    </legend>
+		        <form>
+	                <div class="form-group">
+                        <label for="">Usuario</label>
+                        <input type="text" class="form-control" id="usuario"  placeholder="Usuario">
+	                </div>
+                    <div class="form-group">
+                        <label for="">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" >
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="login.php" method="post" id="login-form">
-                            <div class="form-group">
-                                <label for="">Email:</label>
-                                <input type="text" name="email" id="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password:</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                        </form>
-                    </div>
-                </div>
-                <a href="reset.php" class="btn btn-link">¿Olvidó su Contraseña?</a>
-                <a href="register.php" class="btn btn-link float-right">Nuevo Usuario</a>
-            </div>
+	
+	                <button type="submit" class="btn btn-ttc">Entrar</button>
+	  
+                    <br><br>
+		            <a href="" class="float-left" id="forgetLink">Olvide mi contraseña</a>
+		            <a href="" class="float-right" id="registerLink">Registrate</a>
+	            </form>
+            </fieldset>
         </div>
     </div>
-    <!-- Scripts -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>

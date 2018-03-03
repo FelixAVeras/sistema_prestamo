@@ -1,0 +1,103 @@
+body{
+    background-image: url("https://image.freepik.com/foto-gratis/administrador-de-negocios-hombre-inspector-financiero-y-secretaria-haciendo-informe-calculando-el-equilibrio-documento-de-verificacion-del-servicio-de-rentas-internas-concepto-de-auditoria_1423-1413.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+header h1{
+width: 30%;
+height: 70px;
+float: left;
+padding-top: 10px;
+box-sizing: border-box;
+color: #fff;
+}
+    header{
+        width: 100%;
+        background:  rgba(90, 89, 89, 0.5);
+        height: 70px;
+        position: relative;
+        z-index: 10;
+        box-sizing: border-box;
+    }
+    
+    .jumbotron{
+        transition: 2s;
+        margin-bottom: 50px;
+        border-color: rgba(10, 13, 92, 0.6);
+        border-style: groove;
+        border-width: 5px;
+        border-radius: 20px;
+    }
+  
+    .formulario{
+       
+            transition: 2s;
+            margin-top: 100px;
+            width: 50%;
+            height: 400px;
+            box-shadow: 0px 0px 40px   rgba(27, 30, 154, 0.6),0px 0px 80px rgba(256,256,256 ,1);
+        
+    }
+    .formulario:hover{
+        transition: .8s;
+        background-color: rgba(0,0,0,.5);
+    }
+    legend h2{
+       color:rgb(168, 163, 163);
+    padding: 12px;
+    text-align: center;
+   }
+   .form-group label{
+    color:rgb(168, 163, 163); 
+
+   }
+   .form-group input{
+    transition: .8s;
+        background-color: rgba(0,0,0,.5);
+        color: white;
+        border-color:#006;
+    border-bottom-color:white;
+        border-bottom-style:groove;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+        border-width: 4px;
+
+   }
+   .form-group input:hover{
+        transition: .8s;
+    background-color:rgba(55,71,79 ,.5);
+    box-shadow:inset;
+    border-bottom-color:rgb(4, 25, 95);
+    }
+    
+    .form-group input:focus{
+        transition: .8s;
+    border-bottom-color:rgb(51, 43, 5);
+    }
+
+    .btn-ttc,
+    .btn-ttc:hover,
+    .btn-ttc:active {
+      color: white;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      background-color: rgba(8, 40, 51, 0.918);
+      width: 30%;
+      height: auto;
+      position: relative;
+      margin-left: 35%;
+    }
+    a {
+        color: rgb(11, 65, 68);
+        margin: 5px;
+        margin-left: 20px;
+    }
+    a:link,  a:visited, a:hover{
+        text-decoration: none;
+        color:rgb(4, 86, 90);
+        
+    }
+ 
+    
