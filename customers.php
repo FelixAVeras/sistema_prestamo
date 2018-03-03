@@ -75,6 +75,7 @@
           <td><?php echo $telefono; ?></td>
           <td><?php echo $direccion; ?></td>
           <td><?php echo $email; ?></td>
+          <td>RD$ 30,000.00</td>
           <td>
             <div class="dropdown">
               <a href="#" data-toggle="dropdown">Crear</a>
