@@ -27,6 +27,7 @@
             </ul>
         </li>
         <li><a href="#"><i class="fa fa-sign-out-alt"></i> Salir </a></li>
+        <li><span id="endSideBar"></span></li>
     </ul>
 </div>
 

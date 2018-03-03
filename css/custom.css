@@ -1,3 +1,5 @@
+table.table-customer { margin-top: 30px; }
+table.table-customer thead th { vertical-align: middle; }
 table.table-customer thead th,
 table.table-customer tbody td { text-align: center; }
 
@@ -12,7 +14,7 @@ table.table-customer tbody td { text-align: center; }
 
 a { text-decoration: none !important; }
 .btn-menu { display: none; padding: 20px; background: #0d2c44; color: #fff; }
-.contenedor-menu { width: 20%; min-width: 300px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
+.contenedor-menu { width: 20%; min-width: 210px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
 .contenedor-menu .menu { width: 100%; }
 .contenedor-menu ul { list-style: none; }
 .contenedor-menu .menu li a {
@@ -36,3 +38,5 @@ a { text-decoration: none !important; }
     .btn-menu { display: block; }
     .contenedor-menu .menu { display: none; }
 }
+
+#endSideBar { padding-bottom: 20px; }

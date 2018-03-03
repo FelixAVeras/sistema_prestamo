@@ -57,7 +57,7 @@
         <?php
           $consulta = "SELECT * FROM customers";
           $ejecutar = mysqli_query($connection, $consulta);
-
+          $i = 0;
           while($row = mysqli_fetch_array($ejecutar)) {
             $id = $row['id'];
             $nombre = $row['nameCustomer'];
@@ -66,7 +66,6 @@
             $direccion = $row['address'];
             $email = $row['email'];
             $i++;
-          
         ?>
         <tbody>
           <!-- <td><?php //echo $id; ?></td> -->
@@ -75,20 +74,20 @@
           <td><?php echo $telefono; ?></td>
           <td><?php echo $direccion; ?></td>
           <td><?php echo $email; ?></td>
-          <td>RD$ 30,000.00</td>
+          <td>RD$30,000</td>
           <td>
             <div class="dropdown">
               <a href="#" data-toggle="dropdown">Crear</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Nueva factura</a>
+                  <a class="dropdown-item" href="#">Nueva Prestamo</a>
                   <a class="dropdown-item" href="#">Recibo de pago</a>
                   <a class="dropdown-item" href="#">Abonar cuenta</a>
                   <a class="dropdown-item" href="#">Cotización</a>
                 </div>
             </div>
           </td>
-          <td><a href="customers.php?editar=<?php echo $id;?>" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a></td>
-          <td><a href="customers.php?eliminar=<?php echo $id;?>" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a></td>
+          <td><a href="customers.php?editar=<?php echo $id;?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil-alt"></i></a></td>
+          <td><a href="customers.php?eliminar=<?php echo $id;?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fa fa-trash-alt"></i></a></td>
         </tbody>
         <?php } ?>
       </table>
@@ -138,4 +137,11 @@
         </div>
     </div>
 </div>
+<script>
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  
+</script>
 <?php include('footer.php'); ?>
