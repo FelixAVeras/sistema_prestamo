@@ -1,5 +1,6 @@
 <?php include("connection.php"); ?>
 <?php include('header.php'); ?>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-12">
@@ -23,7 +24,7 @@
       </div>
       <br>
       <?php
-        if(isset($_POST['insert'])) {
+        if(isset($_POST['insertar'])) {
             $nombre = $_POST['nameCustomer'];
             $cedula = $_POST['idcard'];
             $telefono = $_POST['phone'];
@@ -35,8 +36,8 @@
             $ejecutar = mysqli_query($connection, $insertar);
 
             if ($ejecutar) {
-                echo "Insertado correctamnte";
-                header('location: index.php');
+                echo "<div class='alert alert-success'>Insertado correctamente!</div>";
+                header('location: customers.php');
             }
         }
       ?>
@@ -68,8 +69,8 @@
           
         ?>
         <tbody>
-          <td><?php echo $id; ?></td>
-          <td><?php echo $nombre; ?></td>
+          <!-- <td><?php //echo $id; ?></td> -->
+          <td><a href=""><?php echo $nombre; ?></a></td>
           <td><?php echo $cedula; ?></td>
           <td><?php echo $telefono; ?></td>
           <td><?php echo $direccion; ?></td>
