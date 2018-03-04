@@ -44,6 +44,7 @@
       
       <table class="table table-hover table-striped table-responsive table-customer">
         <thead class="thead-dark">
+          <th></th>
           <th>Nombre</th>
           <th>Cedula</th>
           <th>Telefono</th>
@@ -58,6 +59,7 @@
           $consulta = "SELECT * FROM customers";
           $ejecutar = mysqli_query($connection, $consulta);
           $i = 0;
+
           while($row = mysqli_fetch_array($ejecutar)) {
             $id = $row['id'];
             $nombre = $row['nameCustomer'];
@@ -68,7 +70,7 @@
             $i++;
         ?>
         <tbody>
-          <!-- <td><?php //echo $id; ?></td> -->
+          <td><?php echo $photo; ?></td>
           <td><a href=""><?php echo $nombre; ?></a></td>
           <td><?php echo $cedula; ?></td>
           <td><?php echo $telefono; ?></td>
@@ -86,7 +88,7 @@
                 </div>
             </div>
           </td>
-          <td><a href="customers.php?editar=<?php echo $id;?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil-alt"></i></a></td>
+          <td><a href="editCustomer.php?editar=<?php echo $id;?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil-alt"></i></a></td>
           <td><a href="customers.php?eliminar=<?php echo $id;?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fa fa-trash-alt"></i></a></td>
         </tbody>
         <?php } ?>
@@ -137,6 +139,18 @@
         </div>
     </div>
 </div>
+<?php
+  if(isset($_GET['delete'])) {
+    $borrar_id = $_GET['delete'];
+    $borrar = "DELETE FROM customers WHERE id='$borrar_id'";
+    $ejecutar = mysqli_query($connection, $borrar);
+
+    if($ejecutar) {
+      echo "<script>alert('Cliente Actualizado')</script>";
+      echo "<script>window.open('customers.php', '_self')</script>";
+    }
+  }
+?>
 <script>
 
   $(function () {
