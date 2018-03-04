@@ -8,20 +8,7 @@
     </div>
     <div class="col-md-10 col-12">
       <h2>Clientes</h2>
-      <div class="btn-group  float-right">
-        <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success">Nuevo Cliente</button>
-        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
-      </div>
+      <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success float-right">Nuevo Cliente <i class="fa fa-user-plus"></i></button>
       <br>
       <?php
         if(isset($_POST['insertar'])) {
@@ -70,7 +57,7 @@
             $i++;
         ?>
         <tbody>
-          <td><?php echo $photo; ?></td>
+          <td><?php //echo $photo; ?> <img src="img/avatar.png"></td>
           <td><a href=""><?php echo $nombre; ?></a></td>
           <td><?php echo $cedula; ?></td>
           <td><?php echo $telefono; ?></td>

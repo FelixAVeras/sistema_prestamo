@@ -1,7 +1,8 @@
 table.table-customer { margin-top: 30px; }
-table.table-customer thead th { vertical-align: middle; }
 table.table-customer thead th,
 table.table-customer tbody td { text-align: center; }
+table.table-customer thead th { vertical-align: middle; }
+table.table-customer tbody td img { max-width: 128px; max-height: 128px; }
 
 * { 
     margin: 0;
