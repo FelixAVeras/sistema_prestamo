@@ -4,6 +4,11 @@ table.table-customer tbody td { text-align: center; }
 table.table-customer thead th { vertical-align: middle; }
 table.table-customer tbody td img { max-width: 128px; max-height: 128px; }
 
+table.table-prestamo thead th,
+table.table-prestamo tbody td { text-align: center; }
+table.table-prestamo thead th { vertical-align: middle; }
+table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; }
+
 * { 
     margin: 0;
     padding: 0;

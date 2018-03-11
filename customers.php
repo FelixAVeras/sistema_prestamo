@@ -12,20 +12,20 @@
       <br>
       <?php
         if(isset($_POST['insertar'])) {
-            $nombre = $_POST['nameCustomer'];
-            $cedula = $_POST['idcard'];
-            $telefono = $_POST['phone'];
-            $direccion = $_POST['address'];
-            $email = $_POST['email'];
+          $nombre = $_POST['nameCustomer'];
+          $cedula = $_POST['idcard'];
+          $telefono = $_POST['phone'];
+          $direccion = $_POST['address'];
+          $email = $_POST['email'];
 
-            $insertar = "INSERT INTO customers(nameCustomer, idcard, phone, address, email) VALUES('$nombre', '$cedula', '$telefono', '$direccion', '$email')";
+          $insertar = "INSERT INTO customers(nameCustomer, idcard, phone, address, email, phone) VALUES('$nombre', '$cedula', '$telefono', '$direccion', '$email', '$phone')";
 
-            $ejecutar = mysqli_query($connection, $insertar);
+          $ejecutar = mysqli_query($connection, $insertar);
 
-            if ($ejecutar) {
-                echo "<div class='alert alert-success'>Insertado correctamente!</div>";
-                header('location: customers.php');
-            }
+          if ($ejecutar) {
+            echo "<div class='alert alert-success'>Insertado correctamente!</div>";
+            header('location: customers.php');
+          }
         }
       ?>
       
@@ -115,6 +115,10 @@
                     <div class="form-group">
                       <label class="sr-only">Email:</label>
                       <input type="text" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only">Foto:</label>
+                      <input type="file" class="form-control" name="photo" placeholder="Cedula">
                     </div>
             </div>
             <div class="modal-footer">
