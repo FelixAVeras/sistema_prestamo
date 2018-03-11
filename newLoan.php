@@ -63,27 +63,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="garanteCheck">
-                            <label class="form-check-label">
-                                    Requiere Garante
-                            </label>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" name="nombreGrarante" id="nombreGrarante" class="form-control datosGarante" placeholder="Nombre del garante">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <input type="text" name="nombreGrarante" id="nombreGrarante" class="form-control" disabled placeholder="Nombre del garante">
+                            <input type="text" name="telefonoGrarante" id="telefonoGrarante" class="form-control datosGarante" placeholder="Teléfono del garante">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <input type="text" name="telefonoGrarante" id="telefonoGrarante" class="form-control" disabled placeholder="Teléfono del garante">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <input type="text" name="telefonoGrarante" id="telefonoGrarante" class="form-control" disabled placeholder="Cedula del garante">
+                            <input type="text" name="telefonoGrarante" id="telefonoGrarante" class="form-control datosGarante" placeholder="Cedula del garante">
                         </div>
                     </div>
                 </div>

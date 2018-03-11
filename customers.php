@@ -95,7 +95,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="customers.php" method="post">
+                <form action="customers.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <label class="sr-only">Nombre:</label>
                       <input type="text" class="form-control" name="nameCustomer" placeholder="Nombre">
