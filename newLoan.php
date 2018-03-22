@@ -9,7 +9,7 @@
         <div class="col-md-10 col-12">
             <h2>Nuevo Prestamo</h2>
             <br>
-            <form action="" method="post">
+            <form action="js/calculateLoan.js" method="post">
                 <div class="row">
                     <div class="col-md-8 col-12">
                         <div class="form-group">
@@ -44,7 +44,7 @@
                     <div class="col-md-4 col-12">
                         <div class="form-group">
                             <label>Numero de cuotas:</label>
-                            <input type="number" class="form-control" id="numeroCuotas">
+                            <input type="number" class="form-control" id="numeroCuotas" name="numeroCuotas">
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
@@ -54,7 +54,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" id="montoPrestar" name="montoPrestar" class="form-control" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                     <span class="input-group-text">.00</span>
                                 </div>
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <button type="button" id="btn-calcular" class="btn btn-secondary">Calcular</button>
-                <button type="submit" name="btn-confirm" class="btn btn-success">Confirmar Prestamo</button>
+                <button type="submit" name="btn-confirm" id="btn-confirm" class="btn btn-success">Confirmar Prestamo</button>
                 <a href="index.php" class="btn btn-danger">Cancelar todo</a>
             </form>
             <br>

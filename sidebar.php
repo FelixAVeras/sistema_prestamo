@@ -13,7 +13,7 @@
         <li><a href="#"><i class="fa fa-sync"></i> Transacciones <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul>
                 <li><a href="newLoan.php">Nuevo Prestamo</a></li>
-                <li><a href="loan.php">Historial de prestamos y pagos</a></li>
+                <li><a href="viewLoan.php">Historial de prestamos y pagos</a></li>
                 <li><a href="#">Pagos</a></li>
                 <li><a href="#">Moras y Atrazos</a></li>
             </ul>

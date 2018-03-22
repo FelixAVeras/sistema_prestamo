@@ -34,11 +34,4 @@ $(document).ready(function(){
         window.location.href = $(this).attr("href");
     });
 
-
-    //Esta funcion remueve el atributo "disableb" de los inputs del garante cuando el check esta marcado
-    if($('#garanteCheck').prop('checked')) {
-        // $('.datosGarante').removeAttr('disabled');
-
-        console.log('estoy marcado');
-    }
 });

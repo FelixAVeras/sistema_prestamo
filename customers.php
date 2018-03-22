@@ -8,7 +8,20 @@
     </div>
     <div class="col-md-10 col-12">
       <h2>Clientes</h2>
-      <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success float-right">Nuevo Cliente <i class="fa fa-user-plus"></i></button>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar cliente..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-info" type="button"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success float-right">Nuevo Cliente <i class="fa fa-user-plus"></i></button>
+        </div>
+      </div>
+      
       <br>
       <?php
         if(isset($_POST['insertar'])) {
@@ -58,12 +71,12 @@
         ?>
         <tbody>
           <td><?php //echo $photo; ?> <img src="img/avatar.png"></td>
-          <td><a href=""><?php echo $nombre; ?></a></td>
-          <td><?php echo $cedula; ?></td>
-          <td><?php echo $telefono; ?></td>
-          <td><?php echo $direccion; ?></td>
-          <td><?php echo $email; ?></td>
-          <td>N/A</td>
+          <td id="cName"><a href=""><?php echo $nombre; ?></a></td>
+          <td id="cCedula"><?php echo $cedula; ?></td>
+          <td id="cPhone"><?php echo $telefono; ?></td>
+          <td id="cAddress"><?php echo $direccion; ?></td>
+          <td id="cEmail"><?php echo $email; ?></td>
+          <td id="cMoney">N/A</td>
           <td>
             <div class="dropdown">
               <a href="#" data-toggle="dropdown">Crear</a>
