@@ -21,8 +21,7 @@
           <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success float-right">Nuevo Cliente <i class="fa fa-user-plus"></i></button>
         </div>
       </div>
-      
-      <br>
+
       <?php
         if(isset($_POST['insertar'])) {
           $nombre = $_POST['nameCustomer'];
@@ -42,9 +41,9 @@
         }
       ?>
       
-      <table class="table table-hover table-striped table-responsive table-customer">
+      <table class="table table-hover table-responsive table-customer">
         <thead class="thead-dark">
-          <th></th>
+          <!-- <th></th> -->
           <th>Nombre</th>
           <th>Cedula</th>
           <th>Telefono</th>
@@ -70,7 +69,7 @@
             $i++;
         ?>
         <tbody>
-          <td><?php //echo $photo; ?> <img src="img/avatar.png"></td>
+          <!-- <td><?php //echo $photo; ?> <img src="img/avatar.png"></td> -->
           <td id="cName"><a href=""><?php echo $nombre; ?></a></td>
           <td id="cCedula"><?php echo $cedula; ?></td>
           <td id="cPhone"><?php echo $telefono; ?></td>
@@ -155,11 +154,10 @@
     }
   }
 ?>
-<script>
 
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-  
-</script>
 <?php include('footer.php'); ?>
+<script>
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+</script>
