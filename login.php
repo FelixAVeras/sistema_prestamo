@@ -27,11 +27,9 @@
 </head>
 <body>
 	<header>
-		
-<div class="container">
-  	<h1 class="animated flip">IF Credit</h1>
- </div>
-
+		<div class="container">
+			<h1 class="animated flip">IF Credit</h1>
+		</div>
 	</header>
 
 	<section>

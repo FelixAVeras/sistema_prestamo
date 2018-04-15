@@ -1,0 +1,67 @@
+
+header{
+    background: rgba(90, 90, 87, 0.644);
+    width: 100%;
+    height: 60px;
+}
+header h4{
+   color:#fff;
+   padding-top: 12px;
+
+}
+ .menu{
+    background: rgba(136, 108, 38, 0.5);
+    height: 100%;
+    padding-top: 50px;
+    padding-left: 0px;
+}
+.menu a{
+    color:rgb(83, 69, 5);
+   font-size: 20px;
+   /* margin-top: 8px; */
+   
+}
+.menu a:hover {
+    transition: .5s;
+    background-color: rgba(0,0,0,.5);
+    text-decoration: none;
+}
+
+.btn-menu { display: none; padding: 20px; background: #0d2c44; color: #fff; }
+.contenedor-menu { width: 100%; min-width: 210px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
+.contenedor-menu .menu { width: 100%; }
+.contenedor-menu ul { list-style: none; }
+.contenedor-menu .menu li a {
+    /* color: #494949;  */
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    /* background: rgba(136, 108, 38, 0.5); */
+}
+.contenedor-menu .menu li a:hover { background: #e9e9e9; color: #000; }
+.contenedor-menu .menu .icono { font-size: 12px; line-height: 18px; }
+.contenedor-menu .menu .icono.izquierda { float: left; margin-right: 10px; }
+.contenedor-menu .menu .icono.derecha { float: right; margin-left: 10px; }
+.contenedor-menu .menu ul { display: none; }
+.contenedor-menu .menu ul li a { background: #424242; color: #e9e9e9; }
+.contenedor-menu .menu .activado > a { background: #1a95d5; color: #fff }
+
+.clase0 {
+    background: greenyellow;
+    margin-top: 12px;
+}
+.clase1{
+    background: rgb(85, 47, 255);
+    margin-top: 12px;
+}
+
+/* table.table-customer { margin-top: 30px; } */
+table.table-customer thead th,
+table.table-customer tbody td { text-align: center; vertical-align: middle; }
+table.table-customer thead th { vertical-align: middle; }
+table.table-customer tbody td img { max-width: 128px; max-height: 128px; }
+
+table.table-prestamo thead th,
+table.table-prestamo tbody td { text-align: center; }
+table.table-prestamo thead th { vertical-align: middle; }
+table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; }

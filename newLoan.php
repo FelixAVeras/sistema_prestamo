@@ -15,8 +15,11 @@
                         <div class="form-group">
                             <label>Nombre Cliente:</label>
                             <select name="customerName" id="customerName" class="form-control">
-                                <option value="">-- Seleccione --</option>
-                                
+                                <?php 
+                                    foreach($results as $result){ 
+                                        echo'<option value="{{ $id }}">{{ $nameCustomer }}</option>';
+                                    }
+                                ?>
                                 <option value="other">Otro..</option>
                             </select>
                             <input type="text" name="otherCustomer" id="otherCustomer" class="form-control" placeholder="Nuevo cliente" hidden>
@@ -37,14 +40,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="fechaPago" id="fechaPago">
+                                <input type="date" class="form-control" name="fechaPago" id="fechaPago">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="form-group">
                             <label>Numero de cuotas:</label>
-                            <input type="number" class="form-control" id="numeroCuotas" name="numeroCuotas">
+                            <input type="text" class="form-control" id="numeroCuotas" name="numeroCuotas">
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
@@ -120,3 +123,4 @@
     </div>
 </div>
 <?php include('footer.php'); ?>
+<script src="js/calculateLoan.js"></script>

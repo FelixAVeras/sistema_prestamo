@@ -1,13 +1,8 @@
-$(document).ready(funtion() {
+$(document).ready(function() {
 	$('#btn-calcular').on('click', function() {
-
-		var monto = $('input#montoPrestar').val();
-		var cuota = $('input#numeroCuotas').val();
-		var resultado = monto / cuota;
-
-		var fecha = new Date();
-
+		var fecha = $('#fechaPago').val();
+		var cuotas = $('#numeroCuotas').val();
+		
 		console.log(fecha);
-
 	});
 });

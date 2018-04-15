@@ -1,6 +1,29 @@
 <?php include("connection.php"); ?>
 <?php include('header.php'); ?>
 
+<?php
+
+if(isset($_POST['inputSearch'])) {
+  $db = new connection();
+  $filtro = $db->real_escape_string($_POST['inputSearch']);
+  $sql = $db->query("SELECT * FROM customers WHERE name LIKE '%filtro%';");
+
+  if($db->rows($sql) > 0) {
+      while($customer = $db->recorrer($sql)) {
+          //echo $customer['id'], $customer['name'], $customer['lastname'],'<br/>';
+          echo $customer['name'],'<br/>';
+      }
+  }
+  else {
+      echo "No se han encontrado resultados";
+  }
+} 
+else {
+  echo '';
+}
+
+?>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-12">
@@ -10,12 +33,14 @@
       <h2>Clientes</h2>
       <div class="row">
         <div class="col-12 col-md-6">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar cliente..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-info" type="button"><i class="fa fa-search"></i></button>
+          <form action="customers.php" method="post">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Buscar cliente..." id="finder" name="inputSearch">
+              <div class="input-group-append">
+                <button class="btn btn-info" type="button"><i class="fa fa-search"></i></button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
         <div class="col-12 col-md-6">
           <button type="button" data-toggle="modal" data-target="#newCustomer" class="btn btn-success float-right">Nuevo Cliente <i class="fa fa-user-plus"></i></button>
@@ -70,7 +95,7 @@
         ?>
         <tbody>
           <!-- <td><?php //echo $photo; ?> <img src="img/avatar.png"></td> -->
-          <td id="cName"><a href=""><?php echo $nombre; ?></a></td>
+          <td id="cName"><a href="customerProfile.php"><?php echo $nombre; ?></a></td>
           <td id="cCedula"><?php echo $cedula; ?></td>
           <td id="cPhone"><?php echo $telefono; ?></td>
           <td id="cAddress"><?php echo $direccion; ?></td>

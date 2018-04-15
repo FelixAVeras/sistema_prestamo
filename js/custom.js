@@ -34,4 +34,9 @@ $(document).ready(function(){
         window.location.href = $(this).attr("href");
     });
 
+    //Buscador
+    $('#finder').autocomplete({
+		source: 'ajax.php'
+	});
+
 });
