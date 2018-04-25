@@ -1,5 +1,5 @@
 <?php
 
-$connection = new mysqli('localhost', 'root', '', 'sistema_prestamo');
+$connection = new mysqli('localhost', 'root', '', 'sistemaprestamos');
 
 ?>

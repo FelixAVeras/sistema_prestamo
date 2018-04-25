@@ -68,9 +68,10 @@ else {
       
       <table class="table table-hover table-responsive table-customer">
         <thead class="thead-dark">
-          <!-- <th></th> -->
+          <th>#</th>
           <th>Nombre</th>
           <th>Cedula</th>
+          <th>Fecha Nacimiento</th>
           <th>Telefono</th>
           <th>Direccion</th>
           <th>E-mail</th>
@@ -86,21 +87,24 @@ else {
 
           while($row = mysqli_fetch_array($ejecutar)) {
             $id = $row['id'];
-            $nombre = $row['nameCustomer'];
-            $cedula = $row['idcard'];
-            $telefono = $row['phone'];
-            $direccion = $row['address'];
+            $nombre = $row['nombre'];
+            $cedula = $row['cedula'];
+            $fechaNac = $row['fecha_nacimiento'];
+            $telefono = $row['telefono'];
+            $direccion = $row['direccion'];
             $email = $row['email'];
             $i++;
         ?>
         <tbody>
           <!-- <td><?php //echo $photo; ?> <img src="img/avatar.png"></td> -->
-          <td id="cName"><a href="customerProfile.php"><?php echo $nombre; ?></a></td>
-          <td id="cCedula"><?php echo $cedula; ?></td>
-          <td id="cPhone"><?php echo $telefono; ?></td>
-          <td id="cAddress"><?php echo $direccion; ?></td>
-          <td id="cEmail"><?php echo $email; ?></td>
-          <td id="cMoney">N/A</td>
+          <td><?php echo $id; ?></td>
+          <td><a href="customerProfile.php"><?php echo $nombre; ?></a></td>
+          <td><?php echo $cedula; ?></td>
+          <td><?php echo $fechaNac; ?></td>
+          <td><?php echo $telefono; ?></td>
+          <td><?php echo $direccion; ?></td>
+          <td><?php echo $email; ?></td>
+          <td>N/A</td>
           <td>
             <div class="dropdown">
               <a href="#" data-toggle="dropdown">Crear</a>
@@ -132,7 +136,7 @@ else {
                 </button>
             </div>
             <div class="modal-body">
-                <form action="customers.php" method="post" enctype="multipart/form-data">
+                <form action="customers.php" method="post">
                     <div class="form-group">
                       <label class="sr-only">Nombre:</label>
                       <input type="text" class="form-control" name="nameCustomer" placeholder="Nombre">
@@ -153,10 +157,10 @@ else {
                       <label class="sr-only">Email:</label>
                       <input type="text" class="form-control" name="email" placeholder="Email">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label class="sr-only">Foto:</label>
                       <input type="file" class="form-control" name="photo" placeholder="Cedula">
-                    </div>
+                    </div> -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

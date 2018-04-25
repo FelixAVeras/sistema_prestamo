@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" id="btn-calcular" class="btn btn-secondary">Calcular</button>
+                <button type="button" id="btncalcular" class="btn btn-secondary">Calcular</button>
                 <button type="submit" name="btn-confirm" id="btn-confirm" class="btn btn-success">Confirmar Prestamo</button>
                 <a href="index.php" class="btn btn-danger">Cancelar todo</a>
             </form>
