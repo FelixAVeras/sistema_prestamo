@@ -28,7 +28,7 @@ header h4{
 }
 
 .btn-menu { display: none; padding: 20px; background: #0d2c44; color: #fff; }
-.contenedor-menu { width: 100%; min-width: 210px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
+.contenedor-menu { width: 23%; height: 100%; position: fixed; min-width: 210px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
 .contenedor-menu .menu { width: 100%; }
 .contenedor-menu ul { list-style: none; }
 .contenedor-menu .menu li a {

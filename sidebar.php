@@ -1,12 +1,10 @@
-<div class="contenedor-menu">
+<div class="contenedor-menu sidenav">
     <a href="#" class="btn btn-menu">Sistema Prestamos <i class="fa fa-bars"></i></a>
     <ul class="menu">
         <li><a href="index.php"><i class="fa fa-tachometer-alt"></i> Panel </a></li>
         <li><a href="#"><i class="fa fa-users"></i> Clientes <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul style="padding-left: 0px">
-                <li><a href="customers.php">Ver Cliente</a></li>
-                <li><a href="#">Editar Cliente</a></li>
-                <li><a href="#">Eliminar Cliente</a></li>
+                <li><a href="customers.php">Ver Clientes</a></li>
                 <li><a href="#">Garante</a></li>
             </ul>
         </li>
@@ -20,8 +18,7 @@
         </li>
         <li><a href="#"><i class="fa fa-user-circle"></i> Empleados <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul style="padding-left: 0px">
-                <li><a href="employee.php">Ver Empleado</a></li>
-                <li><a href="#">Editar Empleado</a></li>
+                <li><a href="employee.php">Ver Empleados</a></li>
                 <li><a href="#">Gestionar Permisos</a></li>
                 <li><a href="#">Eliminar Empleado</a></li>
             </ul>

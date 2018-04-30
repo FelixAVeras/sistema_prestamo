@@ -1,4 +1,6 @@
 <?php
+    include('connection.php');
+    
     session_start();
 
     require 'connection.php';
@@ -15,6 +17,12 @@
             $user = $results;
         }
     }
+?>
+
+<?php
+
+$customer = mysqli_query("SELECT * FROM customers");
+
 ?>
 
 <?php include('header.php'); ?>
@@ -40,7 +48,7 @@ var myChart = new Chart(ctx, {
         labels: ["Monto Prestado", "Moras y atrazos", "Clientes Saldados", "Monto Recaudado", "Clientes", "Transacciones"],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 4, 3],
             backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(54, 162, 235)',

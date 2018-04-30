@@ -1,17 +1,14 @@
 $(document).ready(function() {
 	$('#btncalcular').click(function() {
 		
-		var cuota = $('#numeroCuotas').val();
+		var cuota = $('#numeroPagos').val();
 		var monto = $('#montoPrestar').val();
+		var pagare = $('#montoPago').val();
 		
 		var fecha = new Date($('#fechaPago').val());
 		var dia = fecha.getDate() + 1;
 		
-		var resultado = monto / cuota;
+		console.log(dia);
 		
-		for(resultado = 0; resultado = monto; resultado++){
-			var pago = monto - resultado;
-		}
-		console.log(pago);
 	});
 });

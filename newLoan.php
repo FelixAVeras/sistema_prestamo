@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Monto a Prestar</label>
                                 <div class="input-group mb-3">
@@ -40,13 +40,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Numero de cuotas(Pagos)</label>
                                 <input type="text" class="form-control" name="numeroPagos" id="numeroPagos">
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+                                <label>Monto a Pagar</label>
+                                <input type="text" class="form-control" name="montoPago" id="montoPago">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Fecha de Pago</label>
                                 <input type="date" class="form-control" name="fechaPago" id="fechaPago">
@@ -58,7 +64,7 @@
                         <label class="form-check-label" for="exampleCheck1">Requiere Garante</label>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Nombre Garante</label>
                                 <input type="text" class="form-control" name="nombreGarante" id="nombreGarante">
