@@ -22,7 +22,17 @@
                     </div>
                 </div>
                 <br>
+                <!-- <?php
+                
+                // $result = mysqli_query("SELECT COUNT(*) FROM customers");
+                // $row = mysqli_fetch_array($result);
+                // $total = $row[0];
+                
+                // echo "<p><strong>Total de clientes: </strong>".$total."</p>";
+                ?> -->
+
                 <p><strong>Total de clientes: </strong></p>
+                
                 <?php
                 
                 if(isset($_POST['btnSubmit'])) {
@@ -79,31 +89,50 @@
                                     <td><?php echo $Nombre; ?></td>
                                     <td><?php echo $Cedula; ?></td>
                                     <td><?php echo $FechaNacimiento; ?></td>
-                                    <td><?php echo $Telefono; ?></td>
                                     <td><?php echo $Direccion; ?></td>
+                                    <td><?php echo $Telefono; ?></td>
                                     <td><?php echo $Email; ?></td>
                                     <td>
                                         <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Opciones
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                <a class="dropdown-item" href="#">Nueva factura</a>
+                                                <a class="dropdown-item" href="#">Recibo de pago</a>
+                                                <a class="dropdown-item" href="#">Abonar cuenta</a>
+                                                <a class="dropdown-item" href="#">Cotización</a>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Editar</a>
-                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-danger">Eliminar <i class="fas fa-times"></i></a>
+                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="customers.php?borrar=<?php echo $id; ?>" class="btn btn-danger"><i class="fas fa-times"></i></a>
                                         </div> 
                                     </td>
                                 </tr>
                             </tbody>
                                 <?php } ?>
                         </table>
+                        <?php
+
+                        if(isset($_GET['editar'])) {
+                            include('editar.php');
+                        }
+
+                        if(isset($_GET['borrar'])) {
+                            $borrar_id = $_GET['borrar'];
+                            $borrar = "DELETE FROM customers WHERE id = $borrar_id";
+                            $ejecutar = mysql_query($connection, $borrar);
+
+                            if($ejecutar) {
+                                echo '<script>alert("Cliente Eliminado")</script>';
+                                echo '<script>window.open("customers.php")</script>';
+                            }
+                        }
+
+                        ?>
                     </div>
                 </div>
             </div>
