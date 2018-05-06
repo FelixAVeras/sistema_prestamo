@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-12 col-md-8">
                             <div class="form-group">
-                                <label>Nombre del cliente</label>&nbsp;<a href="" class="float-right">Cliente no aparece en la lista?</a>
+                                <label>Nombre del cliente</label>
                                 <select name="customerName" id="customerName" class="form-control">
                                     <option value="">-- Seleccione Cliente --</option>
                                 </select>
@@ -31,9 +31,9 @@
                                 <label>Monto a Prestar</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">$</span>
+                                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="montoPrestar">
+                                    <input type="text" class="form-control" name="montoPrestar" id="montoPrestar">
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>
@@ -43,7 +43,7 @@
                         <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Numero de cuotas(Pagos)</label>
-                                <input type="text" class="form-control" name="numeroPagos" id="numeroPagos">
+                                <input type="number" class="form-control" name="numeroPagos" id="numeroPagos">
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
@@ -58,6 +58,18 @@
                                 <input type="date" class="form-control" name="fechaPago" id="fechaPago">
                             </div>
                         </div>
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+                                <label>Interes %</label>
+                                <select class="form-control" name="interesPercent" id="interesPercent">
+                                    <option value="">-- Selecione --</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -70,16 +82,22 @@
                                 <input type="text" class="form-control" name="nombreGarante" id="nombreGarante">
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Cedula Garante</label>
                                 <input type="text" class="form-control" name="cedulaGarante" id="cedulaGarante">
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Telefono Garante</label>
                                 <input type="text" class="form-control" name="telefonoGarante" id="telefonoGarante">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+                                <label>Telefono Garante #2</label>
+                                <input type="text" class="form-control" name="telefonoGarante2" id="telefonoGarante2">
                             </div>
                         </div>
                     </div>
@@ -89,6 +107,26 @@
                         <button type="button" class="btn btn-danger">Cancelar Prestamo <i class="fas fa-times"></i></button>
                     </div>
                 </form>
+                <hr>
+                <table class="table table-responsive table-hover table-striped"  id="tabla_factura">
+                    <thead>
+                        <tr>
+                            <th># Pago</th>
+                            <th>Fecha de pago</th>
+                            <th>Cantidad a pagar</th>
+                            <th>Cantidad a pagar + Interes</th>
+                            <th>Total restante</th>
+                        </tr>
+                    </thead>
+                </table>
+                <tbody id="content_table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </div>
         </div>
     </div>

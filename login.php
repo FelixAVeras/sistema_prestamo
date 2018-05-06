@@ -42,11 +42,11 @@
 					<form action="" method="post">
 						<div class="form-group">
 							<label for="">Usuario</label>
-							<input type="text" class="form-control" id="usuario"  placeholder="Usuario">
+							<input type="text" name="email" class="form-control" id="usuario"  placeholder="Usuario">
 						</div>
 						<div class="form-group">
 							<label for="">Contraseña</label>
-							<input type="password" class="form-control" id="password" placeholder="Contraseña" >
+							<input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" >
 						</div>
 		
 						<!-- <button type="submit" class="btn btn-ttc">Entrar</button> -->
