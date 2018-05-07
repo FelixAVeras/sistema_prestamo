@@ -54,12 +54,32 @@
 		
 						<br><br>
 						<a href="" class="float-left" id="forgetLink">Olvide mi contraseña</a>
-						<a href="" class="float-right" id="registerLink">Registrate</a>
+						<a href="" class="float-right" id="registerLink" data-toggle="modal" data-target="#exampleModal">Registrate</a>
 					</form>
 				</fieldset>
 			</div>
 		</div>
 	</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Registro de Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	<script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

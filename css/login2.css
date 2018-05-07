@@ -101,4 +101,10 @@ a:link,  a:visited, a:hover{
     
 }
  
-    
+a#registerLink, a#forgetLink { padding: 11px; }
+a#registerLink:hover, a#forgetLink:hover {
+    background: rgba(8, 40, 51, 0.918);
+    color: #fff;
+    padding: 11px;
+    border-radius: 4px;
+}
