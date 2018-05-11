@@ -2,7 +2,7 @@
 header{
     background: rgba(90, 90, 87, 0.644);
     width: 100%;
-    height: 60px;
+    height: 13px;
 }
 header h4{
    color:#fff;
@@ -17,7 +17,7 @@ header h4{
 }
 .menu a{
     color:rgb(83, 69, 5);
-   font-size: 20px;
+    font-size: 20px;
    /* margin-top: 8px; */
    
 }

@@ -21,7 +21,7 @@
                         <form action="register.php" method="post">
                             <div class="form-group">
                                 <label for="">Nombre:</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
+                                <input type="text" name="usuario" id="usuario" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Email:</label>
@@ -42,11 +42,11 @@
     <?php
 
         if(isset($_POST['insert'])) {
-            $name = $_POST['name'];
+            $name = $_POST['usuario'];
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $insertar = "INSERT INTO usuarios(name, email, password) VALUES('$name', '$email', '$password')";
+            $insertar = "INSERT INTO usuarios(usuario, email, password) VALUES('$name', '$email', '$password')";
 
             $ejecutar = mysqli_query($connection, $insertar);
 

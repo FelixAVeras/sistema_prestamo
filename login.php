@@ -1,15 +1,35 @@
 <?php
-    require 'connection.php';
+	session_start();
+    include('connection.php');
 
-    $errors = array();
+    function login_validate($email, $password, &$result) {
+    	$sql = "SELECT * FROM usuarios WHERE email = $email AND password = $password";
+    	$rec = mysql_query($sql);
+    	$count = 0;
 
-    if(!empty($_POST)) {
-        $email = $connection->real_escape_string($_POST['email']);
-        $password = $connection->real_escape_string($_POST['password']);
+    	while($row = mysql_fetch_object($rec)) {
+    		$count++;
+    		$result = $row;
+    	}
 
-        if (isNullLogin($email, $password)) {
-            $errors[] = "No puede haber campos vacios";
-        }
+    	if($count == 1) {
+    		return 1;
+    	}
+    	else {
+    		return 0;
+    	}
+    }
+
+    if(!isset($_SESSION['userID'])) {
+    	if(isset($_POST['login'])) {
+    		if(login_validate($_POST['email'], $_POST['password'], $result) == 1) {
+    			$_SESSION['userID'] = $result->userID;
+    			header("location: index.php");
+    		}
+    		else {
+    			echo "<div class='alert alert-danger'>Su usuario es incorrecto, intente nuevamente.</div>";
+    		}
+    	}
     }
 
 ?>
@@ -54,32 +74,12 @@
 		
 						<br><br>
 						<a href="" class="float-left" id="forgetLink">Olvide mi contraseña</a>
-						<a href="" class="float-right" id="registerLink" data-toggle="modal" data-target="#exampleModal">Registrate</a>
+						<a href="register.php" class="float-right" id="registerLink">Registrate</a>
 					</form>
 				</fieldset>
 			</div>
 		</div>
 	</section>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Registro de Usuario</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 	<script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

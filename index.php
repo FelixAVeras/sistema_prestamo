@@ -1,28 +1,9 @@
 <?php
-    include('connection.php');
-    
     session_start();
+    include('connection.php');
+      
 
-    require 'connection.php';
-
-    if (isset($_SESSION['user_id'])) {
-        $records = $connection->prepare('SELECT id, password FROM users WHERE id = :id');
-        $records->bindParam(':id', $_SESSION['user_id']);
-        $records->execute();
-        $results = $records->fecth(PDO::FETCH_ASSOC);
-
-        $user = null;
-
-        if (count($results) > 0) {
-            $user = $results;
-        }
-    }
-?>
-
-<?php
-
-$customer = mysqli_query("SELECT * FROM customers");
-
+    
 ?>
 
 <?php include('header.php'); ?>
@@ -39,7 +20,7 @@ $customer = mysqli_query("SELECT * FROM customers");
         </div>
     </div>
 <?php include('footer.php'); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="js/Chart.bundle.min.js"></script>
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
