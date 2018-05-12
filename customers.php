@@ -11,11 +11,11 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeyup = "showHint(this.value)">
+                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeyup = "showResult(this.value)">
                             <div class="input-group-append">
                                 <button class="btn btn-info" type="button">Buscar <i class="fas fa-search"></i></button>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Nuevo Cliente <i class="fas fa-user-plus"></i></button>
@@ -31,6 +31,7 @@
                 // echo "<p><strong>Total de clientes: </strong>".$total."</p>";
                 ?> -->
                 
+                <div id="livesearch"></div>
                 <p><strong>Total de clientes: </strong></p>
                 
                 <?php
