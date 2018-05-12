@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include('connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,5 +20,6 @@
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <span class="navbar-brand mb-0 h1">IF Credit</span>
+            <!-- <h5 class="float-right currentUserName">Bienvenido(a) <?php //echo $_SESSION['userID'] ?></h5> -->
         </nav>
     </header>

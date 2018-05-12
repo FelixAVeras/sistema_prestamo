@@ -1,4 +1,3 @@
-
 header{
     background: rgba(90, 90, 87, 0.644);
     width: 100%;
@@ -9,7 +8,12 @@ header h4{
    padding-top: 12px;
 
 }
- .menu{
+
+h5.currentUserName { color: #ffffff; }
+
+div.container-fluid div.row div.col-md-9 { margin-top: 42px; }
+
+.menu{
     background: rgba(136, 108, 38, 0.5);
     height: 100%;
     padding-top: 50px;

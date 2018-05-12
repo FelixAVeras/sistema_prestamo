@@ -5,7 +5,7 @@
 if(isset($_GET['editar'])) {
     $editar_id = $_GET['editar'];
 
-    $consulta = "SELECT * FROM customers WHERE id = $editar_id";
+    $consulta = "SELECT * FROM clientes WHERE id = $editar_id";
     $ejecutar = mysqli_query($connection, $consulta);
 
     $fila = mysqli_fetch_array($ejecutar);
@@ -80,7 +80,7 @@ if(isset($_POST['btnUpdate'])) {
     $Direccion = $_POST['direccion'];
     $Email = $_POST['email'];
     
-    $actualizar = "UPDATE customers SET nombre = '$Nombre', cedula = '$Cedula', fecha_nacimiento = '$FechaNacimiento', telefono = '$Telefono', direccion = '$Direccion', email = '$Email'
+    $actualizar = "UPDATE clientes SET nombre = '$Nombre', cedula = '$Cedula', fecha_nacimiento = '$FechaNacimiento', telefono = '$Telefono', direccion = '$Direccion', email = '$Email'
                     WHERE id = '$editar_id'";
     
     $ejecutar = mysqli_query($consulta, $actualizar);

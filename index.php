@@ -1,9 +1,6 @@
 <?php
     session_start();
     include('connection.php');
-      
-
-    
 ?>
 
 <?php include('header.php'); ?>

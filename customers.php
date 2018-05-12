@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeyup = "showHint(this.value)">
                             <div class="input-group-append">
                                 <button class="btn btn-info" type="button">Buscar <i class="fas fa-search"></i></button>
                             </div>
@@ -30,7 +30,7 @@
                 
                 // echo "<p><strong>Total de clientes: </strong>".$total."</p>";
                 ?> -->
-
+                
                 <p><strong>Total de clientes: </strong></p>
                 
                 <?php
@@ -43,7 +43,7 @@
                     $Direccion = $_POST['direccion'];
                     $Email = $_POST['email'];
 
-                    $insertar = "INSERT INTO customers(nombre, cedula, fecha_nacimiento, telefono, direccion, email) 
+                    $insertar = "INSERT INTO clientes(nombre, cedula, fecha_nacimiento, telefono, direccion, email) 
                                 VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
 
                     $ejecutar = mysqli_query($connection, $insertar);
@@ -70,7 +70,7 @@
                                 </tr>
                             </thead>
                             <?php
-                                $consulta = "SELECT * FROM customers";
+                                $consulta = "SELECT * FROM clientes";
                                 $ejecutar = mysqli_query($connection, $consulta);
                                 $i = 0;
 
@@ -98,6 +98,7 @@
                                                 Opciones
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Cuenta actual</a>
                                                 <a class="dropdown-item" href="#">Nueva factura</a>
                                                 <a class="dropdown-item" href="#">Recibo de pago</a>
                                                 <a class="dropdown-item" href="#">Abonar cuenta</a>
@@ -107,8 +108,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="customers.php?borrar=<?php echo $id; ?>" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="customers.php?borrar=<?php echo $id; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Borrar"><i class="fas fa-times"></i></a>
                                         </div> 
                                     </td>
                                 </tr>
@@ -123,7 +124,7 @@
 
                         if(isset($_GET['borrar'])) {
                             $borrar_id = $_GET['borrar'];
-                            $borrar = "DELETE FROM customers WHERE id = $borrar_id";
+                            $borrar = "DELETE FROM clientes WHERE id = $borrar_id";
                             $ejecutar = mysql_query($connection, $borrar);
 
                             if($ejecutar) {
@@ -204,6 +205,13 @@
 </div>
 
 <?php include('footer.php'); ?>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+
+        //$( ".datepicker" ).datepicker();
+    });
+</script>
 
 
 
