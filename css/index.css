@@ -69,3 +69,5 @@ table.table-prestamo thead th,
 table.table-prestamo tbody td { text-align: center; }
 table.table-prestamo thead th { vertical-align: middle; }
 table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; }
+
+.nuevoInteres, #filaGarante, .garanteCheck { display: none; }
