@@ -18,6 +18,7 @@
                                     $result = mysqli_query($connection, $sql);
 
                                     echo "<select name='customerName' id='customerName' class='form-control'>";
+                                    echo "<option value='0'>-- Seleccione --</option>";
                                     while($row = mysqli_fetch_array($result)) {
                                         echo "<option value='".$row['clienteID']."'>".$row['nombre']."</option>";
                                     }
@@ -152,17 +153,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3 class="text-center" id="ModalMessage"></h3>
+        <h3 class="text-justify" id="ModalMessage"></h3>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
       </div>
     </div>
   </div>
@@ -181,6 +181,7 @@
         
         $('input.nuevoInteres').css('display', 'block');
         $('select#interesPercent').prop('disabled', true);
+        
     }
 </script>
 

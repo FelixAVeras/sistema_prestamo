@@ -1,4 +1,7 @@
-<?php include('connection.php'); ?>
+<?php
+    session_start();
+    include('connection.php');
+?>
 
 <?php include('header.php'); ?>
     <div class="container-fluid">
@@ -87,7 +90,7 @@
                             ?>
                             <tbody>
                                 <tr>
-                                    <td><?php echo $Nombre; ?></td>
+                                    <td><a href="customerProfile.php"><?php echo $Nombre; ?></a></td>
                                     <td><?php echo $Cedula; ?></td>
                                     <td><?php echo $FechaNacimiento; ?></td>
                                     <td><?php echo $Direccion; ?></td>
