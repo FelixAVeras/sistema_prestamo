@@ -65,10 +65,10 @@ table.table-customer tbody td { text-align: center; vertical-align: middle; }
 table.table-customer thead th { vertical-align: middle; }
 table.table-customer tbody td img { max-width: 128px; max-height: 128px; }
 
-table.table-prestamo thead th,
-table.table-prestamo tbody td { text-align: center; }
-table.table-prestamo thead th { vertical-align: middle; }
-table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; }
+table#tabla_factura thead th,
+table#tabla_factura tbody td { text-align: center; }
+table#tabla_factura thead th { vertical-align: middle; }
+table#tabla_factura tfoot { background: #212529; border-color: #32383e; color: #fff; }
 
 .nuevoInteres, #filaGarante, .garanteCheck { display: none; }
 ul.profileDetailsList { list-style: none; }

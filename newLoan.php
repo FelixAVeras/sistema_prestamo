@@ -136,15 +136,17 @@
                             <th>Total restante</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>27-05-2018</td>
+                            <td>2000</td>
+                            <td>5%</td>
+                            <td>2500</td>
+                            <td>27500</td>
+                        </tr>
+                    </tbody>
                 </table>
-                <tbody id="content_table">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
             </div>
         </div>
     </div>

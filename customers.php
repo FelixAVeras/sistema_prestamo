@@ -34,8 +34,10 @@
                 // echo "<p><strong>Total de clientes: </strong>".$total."</p>";
                 ?> -->
                 
-                <div id="livesearch"></div>
-                <p><strong>Total de clientes: </strong></p>
+                <?php
+                    // $totalCustomer = mysqli_query($connection, "SELECT COUNT(*) FROM clientes");
+                    // echo "<p><strong>Total de Clientes: ". $totalCustomer ." </strong></p>";
+                ?>
                 
                 <?php
                 

@@ -5,7 +5,7 @@
         <li><a href="#"><i class="fa fa-users"></i> Clientes <i class="icono derecha fa fa-chevron-down"></i></a>
             <ul style="padding-left: 0px">
                 <li><a href="customers.php">Ver Clientes</a></li>
-                <li><a href="#">Garante</a></li>
+                <li><a href="#">Garantes</a></li>
             </ul>
         </li>
         <li><a href="#"><i class="fa fa-sync"></i> Transacciones <i class="icono derecha fa fa-chevron-down"></i></a>

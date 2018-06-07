@@ -37,6 +37,7 @@
                     <thead>
                         <tr>
                             <th>Monto Prestado</th>
+                            <th>Total Pagado</th>
                             <th>Garante</th>
                             <th>Estatus</th>
                             <th></th>
@@ -45,12 +46,14 @@
                     <tbody>
                         <tr>
                             <td>RD$17,000</td>
+                            <td>RD$20,000</td>
                             <td>No</td>
                             <td>Pagado</td>
                             <td><a href="#" data-toggle="modal" data-target="#exampleModal">Ver detalles</a></td>
                         </tr>
                         <tr>
                             <td>RD$33,000</td>
+                            <td>RD$13,200</td>
                             <td>Si</td>
                             <td>En Proceso</td>
                             <td><a href="#" data-toggle="modal" data-target="#exampleModal">Ver detalles</a></td>
