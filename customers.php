@@ -43,13 +43,13 @@
                 
                 if(isset($_POST['btnSubmit'])) {
                     $Nombre = $_POST['nombre'];
-                    $Cedula = $_POST['cedula'];
+                    $Cedula = $_POST['numero_documento'];
                     $FechaNacimiento = $_POST['fecha_nacimiento'];
                     $Telefono = $_POST['telefono'];
                     $Direccion = $_POST['direccion'];
                     $Email = $_POST['email'];
 
-                    $insertar = "INSERT INTO clientes(nombre, cedula, fecha_nacimiento, telefono, direccion, email) 
+                    $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email) 
                                 VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
 
                     $ejecutar = mysqli_query($connection, $insertar);
@@ -75,6 +75,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            <tbody>
                             <?php
                                 $consulta = "SELECT * FROM clientes";
                                 $ejecutar = mysqli_query($connection, $consulta);
@@ -82,7 +83,7 @@
 
                                 while($fila = mysqli_fetch_array($ejecutar)){
                                     $Nombre = $fila['nombre'];
-                                    $Cedula = $fila['cedula'];
+                                    $Cedula = $fila['numero_documento'];
                                     $FechaNacimiento = $fila['fecha_nacimiento'];
                                     $Telefono = $fila['telefono'];
                                     $Direccion = $fila['direccion'];
@@ -90,7 +91,6 @@
 
                                     $i++;
                             ?>
-                            <tbody>
                                 <tr>
                                     <td><a href="customerProfile.php"><?php echo $Nombre; ?></a></td>
                                     <td><?php echo $Cedula; ?></td>
@@ -119,8 +119,8 @@
                                         </div> 
                                     </td>
                                 </tr>
-                            </tbody>
                                 <?php } ?>
+                            </tbody>
                         </table>
                         <?php
 
@@ -168,7 +168,7 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label>Cedula</label>
-                        <input type="text" class="form-control" name="cedula" id="cedula">
+                        <input type="text" class="form-control" name="numero_documento" id="cedula">
                     </div>
                 </div>
             </div>
