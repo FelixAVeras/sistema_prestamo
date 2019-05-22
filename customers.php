@@ -84,7 +84,7 @@
                                 while($fila = mysqli_fetch_array($ejecutar)){
                                     $Nombre = $fila['nombre'];
                                     $Cedula = $fila['numero_documento'];
-                                    $FechaNacimiento = $fila['fecha_nacimiento'];
+                                    $FechaNacimiento = date_create($fila['fecha_nacimiento']);
                                     $Telefono = $fila['telefono'];
                                     $Direccion = $fila['direccion'];
                                     $Email = $fila['email'];
@@ -94,7 +94,7 @@
                                 <tr>
                                     <td><a href="customerProfile.php"><?php echo $Nombre; ?></a></td>
                                     <td><?php echo $Cedula; ?></td>
-                                    <td><?php echo $FechaNacimiento; ?></td>
+                                    <td><?php echo date_format($FechaNacimiento, "d-m-Y"); ?></td>
                                     <td><?php echo $Direccion; ?></td>
                                     <td><?php echo $Telefono; ?></td>
                                     <td><?php echo $Email; ?></td>

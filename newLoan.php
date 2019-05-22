@@ -25,6 +25,7 @@
                                     echo "</select>";
                                     
                                 ?>
+                                <a href="customers.php" class="mt-2">Nuevo Cliente</a>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
