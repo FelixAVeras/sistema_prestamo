@@ -25,22 +25,9 @@
                     </div>
                 </div>
                 <br>
-                <!-- <?php
-                
-                // $result = mysqli_query("SELECT COUNT(*) FROM customers");
-                // $row = mysqli_fetch_array($result);
-                // $total = $row[0];
-                
-                // echo "<p><strong>Total de clientes: </strong>".$total."</p>";
-                ?> -->
-                
+
                 <?php
-                    // $totalCustomer = mysqli_query($connection, "SELECT COUNT(*) FROM clientes");
-                    // echo "<p><strong>Total de Clientes: ". $totalCustomer ." </strong></p>";
-                ?>
-                
-                <?php
-                
+
                 if(isset($_POST['btnSubmit'])) {
                     $Nombre = $_POST['nombre'];
                     $Cedula = $_POST['numero_documento'];
@@ -49,7 +36,7 @@
                     $Direccion = $_POST['direccion'];
                     $Email = $_POST['email'];
 
-                    $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email) 
+                    $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email)
                                 VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
 
                     $ejecutar = mysqli_query($connection, $insertar);
@@ -116,7 +103,7 @@
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                                             <a href="customers.php?borrar=<?php echo $id; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Borrar"><i class="fas fa-times"></i></a>
-                                        </div> 
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -218,12 +205,3 @@
         //$( ".datepicker" ).datepicker();
     });
 </script>
-
-
-
-
-
-
-
-
-
