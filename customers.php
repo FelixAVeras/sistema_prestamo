@@ -4,7 +4,6 @@
 ?>
 
 <?php include('header.php'); ?>
-    <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-12">
                 <?php include('sidebar.php'); ?>
@@ -131,7 +130,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

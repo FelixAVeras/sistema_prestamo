@@ -1,8 +1,7 @@
 <?php include('connection.php'); ?>
 
 <?php include('header.php'); ?>
-    <div class="container-fluid">
-        <div class="row">
+  <div class="row">
             <div class="col-md-3 col-12">
                 <?php include('sidebar.php'); ?>
             </div>
@@ -23,7 +22,7 @@
                                         echo "<option value='".$row['clienteID']."'>".$row['nombre']."</option>";
                                     }
                                     echo "</select>";
-                                    
+
                                 ?>
                                 <a href="customers.php" class="mt-2">Nuevo Cliente</a>
                             </div>
@@ -150,7 +149,6 @@
                 </table>
             </div>
         </div>
-    </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -181,18 +179,9 @@
     function otroInteres() {
         var otro = document.getElementById('interesPercent').selectedIndex;
         var opciones = document.getElementById('interesPercent').options;
-        
+
         $('input.nuevoInteres').css('display', 'block');
         $('select#interesPercent').prop('disabled', true);
-        
+
     }
 </script>
-
-
-
-
-
-
-
-
-

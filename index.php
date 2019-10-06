@@ -4,18 +4,16 @@
 ?>
 
 <?php include('header.php'); ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-12">
-                <?php include('sidebar.php'); ?>
-            </div>
-            <div class="col-md-9 col-12">
-                <h1 class="text-left">Resumen</h1>
-                <br>
-                <canvas id="myChart" width="1000" height="400"></canvas>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-md-3 col-12">
+          <?php include('sidebar.php'); ?>
+      </div>
+      <div class="col-md-9 col-12">
+          <h1 class="text-left">Resumen</h1>
+          <br>
+          <canvas id="myChart" width="1000" height="400"></canvas>
+      </div>
+  </div>
 <?php include('footer.php'); ?>
 <script src="js/Chart.bundle.min.js"></script>
 <script>
