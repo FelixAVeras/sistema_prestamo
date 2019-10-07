@@ -1,4 +1,4 @@
-table.table-customer { margin-top: 30px; }
+/* table.table-customer { margin-top: 30px; }
 table.table-customer thead th,
 table.table-customer tbody td { text-align: center; }
 table.table-customer thead th { vertical-align: middle; }
@@ -7,7 +7,7 @@ table.table-customer tbody td img { max-width: 128px; max-height: 128px; }
 table.table-prestamo thead th,
 table.table-prestamo tbody td { text-align: center; }
 table.table-prestamo thead th { vertical-align: middle; }
-table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; }
+table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: #fff; } */
 
 * { 
     margin: 0;
@@ -16,9 +16,12 @@ table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: 
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.menu{
+body { background: #f3f3f3; }
+
+/* .menu{
     background: rgba(136, 108, 38, 0.5);
     height: 100%;
     padding-top: 50px;
@@ -27,8 +30,8 @@ table.table-prestamo tfoot { background: #212529; border-color: #32383e; color: 
 
 a { text-decoration: none !important; }
 .btn-menu { display: none; padding: 20px; background: #0d2c44; color: #fff; }
-.contenedor-menu { width: 20%; min-width: 210px; /*margin: 7px;*/ display: inline-block; line-height: 18px; }
-.contenedor-menu .menu { width: 100%; }
+.contenedor-menu { width: 20%; min-width: 210px; /*margin: 7px;*/ /*display: inline-block; line-height: 18px;}*/ 
+/*.contenedor-menu .menu { width: 100%; }
 .contenedor-menu ul { list-style: none; }
 .contenedor-menu .menu li a {
     color: #494949; 
@@ -50,6 +53,14 @@ a { text-decoration: none !important; }
     .contenedor-menu { margin: 0; width: 100%; position: fixed; top: 0; z-index: 1000; }
     .btn-menu { display: block; }
     .contenedor-menu .menu { display: none; }
-}
+} */
 
 #endSideBar { padding-bottom: 20px; }
+
+.customContainer {
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 1%;
+    width: 98%;
+}

@@ -12,7 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
-    <!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>

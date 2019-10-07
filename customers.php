@@ -9,123 +9,130 @@
                 <?php include('sidebar.php'); ?>
             </div>
             <div class="col-md-9 col-12">
-                <h1 class="text-left">Clientes</h1>
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeyup = "showResult(this.value)">
-                            <div class="input-group-append">
-                                <button class="btn btn-info" type="button">Buscar <i class="fas fa-search"></i></button>
+                <div class="customContainer">
+                    <h1 class="text-left">Clientes</h1>
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeyup = "showResult(this.value)">
+                                <div class="input-group-append">
+                                    <button class="btn btn-info" type="button">Buscar <i class="fas fa-search"></i></button>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-12 col-md-4">
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Nuevo Cliente <i class="fas fa-user-plus"></i></button>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Nuevo Cliente <i class="fas fa-user-plus"></i></button>
-                    </div>
-                </div>
-                <br>
+                    <br>
 
-                <?php
+                    <?php
 
-                if(isset($_POST['btnSubmit'])) {
-                    $Nombre = $_POST['nombre'];
-                    $Cedula = $_POST['numero_documento'];
-                    $FechaNacimiento = $_POST['fecha_nacimiento'];
-                    $Telefono = $_POST['telefono'];
-                    $Direccion = $_POST['direccion'];
-                    $Email = $_POST['email'];
+                    if(isset($_POST['btnSubmit'])) {
+                        $Nombre = $_POST['nombre'];
+                        $Cedula = $_POST['numero_documento'];
+                        $FechaNacimiento = $_POST['fecha_nacimiento'];
+                        $Telefono = $_POST['telefono'];
+                        $Direccion = $_POST['direccion'];
+                        $Email = $_POST['email'];
 
-                    $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email)
-                                VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
+                        $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email)
+                                    VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
 
-                    $ejecutar = mysqli_query($connection, $insertar);
+                        $ejecutar = mysqli_query($connection, $insertar);
 
-                    if($ejecutar) {
-                        echo '<div class="alert alert-success" role="alert">Insertado correctamente!</div>';
+                        if($ejecutar) {
+                            echo '<div class="alert alert-success" role="alert">Insertado correctamente!</div>';
+                        }
                     }
-                }
 
-                ?>
-                <div class="row">
-                    <div class="col-12 col-md-12">
-                        <table class="table table-hover table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Cedula</th>
-                                    <th>Fecha Nacimiento</th>
-                                    <th>Direccion</th>
-                                    <th>Telefono</th>
-                                    <th>Email</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $consulta = "SELECT * FROM clientes";
-                                $ejecutar = mysqli_query($connection, $consulta);
-                                $i = 0;
-
-                                while($fila = mysqli_fetch_array($ejecutar)){
-                                    $Nombre = $fila['nombre'];
-                                    $Cedula = $fila['numero_documento'];
-                                    $FechaNacimiento = date_create($fila['fecha_nacimiento']);
-                                    $Telefono = $fila['telefono'];
-                                    $Direccion = $fila['direccion'];
-                                    $Email = $fila['email'];
-
-                                    $i++;
-                            ?>
-                                <tr>
-                                    <td><a href="customerProfile.php"><?php echo $Nombre; ?></a></td>
-                                    <td><?php echo $Cedula; ?></td>
-                                    <td><?php echo date_format($FechaNacimiento, "d-m-Y"); ?></td>
-                                    <td><?php echo $Direccion; ?></td>
-                                    <td><?php echo $Telefono; ?></td>
-                                    <td><?php echo $Email; ?></td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Opciones
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Cuenta actual</a>
-                                                <a class="dropdown-item" href="#">Nueva factura</a>
-                                                <a class="dropdown-item" href="#">Recibo de pago</a>
-                                                <a class="dropdown-item" href="#">Abonar cuenta</a>
-                                                <a class="dropdown-item" href="#">Cotización</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="customers.php?editar=<?php echo $id; ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="customers.php?borrar=<?php echo $id; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Borrar"><i class="fas fa-times"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                    ?>
+                    <div class="row">
+                        <div class="col-12 col-md-12">
                         <?php
+                            $consulta = "SELECT * FROM clientes";
+                            if($result = $connection->query($consulta)) {
+                                if($result->rowCount() > 0) {
+                                    echo '<table class="table table-hover table-responsive">';
+                                    echo '<thead>';
+                                    echo '<tr>';
+                                    echo '<th>ID</th>';
+                                    echo '<th>Nombre</th>';
+                                    echo '<th>Cedula</th>';
+                                    echo '<th>Fecha Nacimiento</th>';
+                                    echo '<th>Direccion</th>';
+                                    echo '<th>Telefono</th>';
+                                    echo '<th>Email</th>';
+                                    echo '<th></th>';
+                                    echo '<th></th>';
+                                    echo '</tr>';
+                                    echo '</thead>';
+                                    echo '<tbody>';
+                                    
+                                    while($row = $result->fecth()) {
+                                        echo '<tr>';
+                                        echo '<td>' . $row['id'] . '</td>';
+                                        echo '<td>' . $row['Nombre'] . '</td>';
+                                        echo '<td>' . $row['Cedula'] . '</td>';
+                                        echo '<td>' . $row['FechaNacimiento'] . '</td>';
+                                        echo '<td>' . $row['Telefono'] . '</td>';
+                                        echo '<td>' . $row['Direccion'] . '</td>';
+                                        echo '<td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Opciones
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Cuenta actual</a>
+                                                        <a class="dropdown-item" href="#">Nueva factura</a>
+                                                        <a class="dropdown-item" href="#">Recibo de pago</a>
+                                                        <a class="dropdown-item" href="#">Abonar cuenta</a>
+                                                        <a class="dropdown-item" href="#">Cotización</a>
+                                                    </div>
+                                                </div>
+                                            </td>';
+                                            echo "<td>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='Detalles' data-toggle='tooltip'><i class='fas fa-eye'></i></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Editar Cliente' data-toggle='tooltip'><i class='fas fa-pencil-alt'></i></a>";
+                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Eliminar Cliente' data-toggle='tooltip'><i class='fas fa-trash-alt'></i></a>";
+                                        echo "</td>";
+                                        echo '</tr>';
+                                    }
 
-                        if(isset($_GET['editar'])) {
-                            include('editar.php');
-                        }
-
-                        if(isset($_GET['borrar'])) {
-                            $borrar_id = $_GET['borrar'];
-                            $borrar = "DELETE FROM clientes WHERE id = $borrar_id";
-                            $ejecutar = mysql_query($connection, $borrar);
-
-                            if($ejecutar) {
-                                echo '<script>alert("Cliente Eliminado")</script>';
-                                echo '<script>window.open("customers.php")</script>';
+                                    echo '</tbody>';
+                                    echo '</table>';
+                                    
+                                    unset($result);
+                                }
+                                else {
+                                    echo "<h3 class='lead'><em>No hay registros almacenados.</em></h3>";
+                                }
                             }
-                        }
+                            else {
+                                echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                            }
 
+                            unset($connection);
                         ?>
+                            <?php
+
+                            // if(isset($_GET['editar'])) {
+                            //     include('editar.php');
+                            // }
+
+                            // if(isset($_GET['borrar'])) {
+                            //     $borrar_id = $_GET['borrar'];
+                            //     $borrar = "DELETE FROM clientes WHERE id = $borrar_id";
+                            //     $ejecutar = mysql_query($connection, $borrar);
+
+                            //     if($ejecutar) {
+                            //         echo '<script>alert("Cliente Eliminado")</script>';
+                            //         echo '<script>window.open("customers.php")</script>';
+                            //     }
+                            // }
+
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,9 +204,7 @@
 
 <?php include('footer.php'); ?>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function(){;
         $('[data-toggle="tooltip"]').tooltip();
-
-        //$( ".datepicker" ).datepicker();
     });
 </script>
