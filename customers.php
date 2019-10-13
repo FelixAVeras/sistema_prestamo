@@ -28,48 +28,114 @@
 
                     <?php
 
-                    if(isset($_POST['btnSubmit'])) {
-                        $Nombre = $_POST['nombre'];
-                        $Cedula = $_POST['numero_documento'];
-                        $FechaNacimiento = $_POST['fecha_nacimiento'];
-                        $Telefono = $_POST['telefono'];
-                        $Direccion = $_POST['direccion'];
-                        $Email = $_POST['email'];
+                    $Nombre = $Cedula = $FechaNacimiento = $Telefono = $Direccion = $Email = '';
+                    $Nombre_err = $Cedula_err = $FechaNacimiento_err = $Telefono_err = $Direccion_err = $Email_err = '';
 
-                        $insertar = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email)
-                                    VALUE('$Nombre', '$Cedula', '$FechaNacimiento', '$Telefono', '$Direccion', '$Email')";
-
-                        $ejecutar = mysqli_query($connection, $insertar);
-
-                        if($ejecutar) {
-                            echo '<div class="alert alert-success" role="alert">Insertado correctamente!</div>';
+                    if($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $input_name = trim($_POST["nombre"]);
+                        
+                        if(empty($input_name)){
+                            $Nombre_err = "Por favor ingrese un nombre";
+                        } else {
+                            $Nombre = $input_name;
                         }
+                        
+                        $input_cedula = trim($_POST["numero_documento"]);
+                        
+                        if(empty($input_cedula)){
+                            $Cedula_err = "Por favor, ingrese un numero de documento";
+                        } else {
+                            $Cedula = $input_cedula;
+                        }
+                        
+                        $input_fechaNac = trim($_POST["fecha_nacimiento"]);
+                        
+                        if(empty($input_fechaNac)){
+                            $FechaNacimiento_err = "Por favor, ingrese una fecha de nacimiento";
+                        } else {
+                            $FechaNacimiento = $input_fechaNac;
+                        }
+                        
+                        $input_Telefono = trim($_POST["telefono"]);
+                        
+                        if(empty($input_Telefono)){
+                            $Telefono_err = "Por favor, ingrese un telefono";
+                        } else {
+                            $Telefono = $input_Telefono;
+                        }
+                        
+                        $input_direccion = trim($_POST["direccion"]);
+                        
+                        if(empty($input_direccion)){
+                            $Direccion_err = "Por favor, ingrese una direccion";     
+                        } else {
+                            $Direccion = $input_direccion;
+                        }
+                        
+                        $input_email = trim($_POST["email"]);
+                        
+                        if(empty($input_email)){
+                            $Email_err = "Por favor, ingrese un Email";     
+                        } else {
+                            $Email = $input_email;
+                        }
+
+                        if(empty($Nombre_err) && empty($Cedula_err) && 
+                            empty($Direccion_err) && empty($FechaNacimiento_err) && 
+                            empty($Telefono_err) && empty($Email_err)) {
+                                $consulta = "INSERT INTO clientes(nombre, numero_documento, fecha_nacimiento, telefono, direccion, email)
+                                 VALUE(:Nombre, :Cedula, :FechaNacimiento, :Telefono, :Direccion, :Email)";
+
+                                if($stmt = $pdo->prepare($consulta)) {
+                                    $stmt->bindParam(":Nombre", $param_nombre);
+                                    $stmt->bindParam(":Cedula", $param_cedula);
+                                    $stmt->bindParam(":FechaNacimiento", $param_fechaNacimiento);
+                                    $stmt->bindParam(":Telefono", $param_telefono);
+                                    $stmt->bindParam(":Direccion", $param_direccion);
+                                    $stmt->bindParam(":Email", $param_email);
+
+                                    $param_nombre = $Nombre;
+                                    $param_cedula = $Cedula;
+                                    $param_fechaNacimiento = $FechaNacimiento;
+                                    $param_telefono = $Telefono;
+                                    $param_direccion = $Direccion;
+                                    $param_email = $Email;
+
+                                    if($stmt->execute()) {
+                                        header('location: customers.php');
+                                    } else {
+                                        echo '<div class="alert alert-danger">Algo Salio mal.</div>';
+                                    }
+                                }
+                            unset($stmt);
+                        }
+                        unset($pdo);
                     }
 
                     ?>
                     <div class="row">
                         <div class="col-12 col-md-12">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Cedula</th>
+                                        <th>Fecha Nacimiento</th>
+                                        <th>Direccion</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            <tbody>
                         <?php
-                            $consulta = "SELECT * FROM clientes";
-                            if($result = $connection->query($consulta)) {
+                            $sql= $connection->prepare("SELECT * FROM clientes");
+                            $sql->execute();
+                            if($result = $connection->query($sql)) {
                                 if($result->rowCount() > 0) {
-                                    echo '<table class="table table-hover table-responsive">';
-                                    echo '<thead>';
-                                    echo '<tr>';
-                                    echo '<th>ID</th>';
-                                    echo '<th>Nombre</th>';
-                                    echo '<th>Cedula</th>';
-                                    echo '<th>Fecha Nacimiento</th>';
-                                    echo '<th>Direccion</th>';
-                                    echo '<th>Telefono</th>';
-                                    echo '<th>Email</th>';
-                                    echo '<th></th>';
-                                    echo '<th></th>';
-                                    echo '</tr>';
-                                    echo '</thead>';
-                                    echo '<tbody>';
-                                    
-                                    while($row = $result->fecth()) {
+                                    while($row = $sql->fecthAll(PDO::FETCH_ASSOC)) {
                                         echo '<tr>';
                                         echo '<td>' . $row['id'] . '</td>';
                                         echo '<td>' . $row['Nombre'] . '</td>';
@@ -108,30 +174,9 @@
                                     echo "<h3 class='lead'><em>No hay registros almacenados.</em></h3>";
                                 }
                             }
-                            else {
-                                echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-                            }
 
                             unset($connection);
                         ?>
-                            <?php
-
-                            // if(isset($_GET['editar'])) {
-                            //     include('editar.php');
-                            // }
-
-                            // if(isset($_GET['borrar'])) {
-                            //     $borrar_id = $_GET['borrar'];
-                            //     $borrar = "DELETE FROM clientes WHERE id = $borrar_id";
-                            //     $ejecutar = mysql_query($connection, $borrar);
-
-                            //     if($ejecutar) {
-                            //         echo '<script>alert("Cliente Eliminado")</script>';
-                            //         echo '<script>window.open("customers.php")</script>';
-                            //     }
-                            // }
-
-                            ?>
                         </div>
                     </div>
                 </div>
